@@ -1,0 +1,929 @@
+<!doctype html>
+<!--
+  ✧.* わーい、ソース見つけたね *.✧
+  most people just look at the screen.
+  you looked underneath it. それが全部だよ、本当に。
+  (ﾐ⚈﹏⚈ﾐ)
+-->
+<!--
+  TODO (緊急!!): デバッグトークン消すの忘れずに～ｗ
+  TODO (backlog forever): legacy認証モジュール直す。たぶん無理。
+  TODO (will never happen): write actual unit tests 草
+-->
+<html lang="en">
+  <!--
+  ここまで読んでるあなた、エンジニアか、めちゃ気になる人だよね。
+  どっちでも歓迎だよ ♡
+-->
+
+  <head>
+    <!-- build: vite 5.x / さわるな、i18n config / 触った人もういない -->
+    <!-- security audit: 予定はQ3。今はQ4。あーね。 -->
+    <!-- PR #482 reviewed by S.Kimura: "LGTM but please rename this variable, future you will hate past you" -->
+    <!-- response from author: 了解です、直します（多分） -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>♡MTS_CTF.ver143♡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="sparkle-field">
+      <div class="star-layer s1"></div>
+      <div class="star-layer s2"></div>
+      <div class="star-layer s3"></div>
+      <div class="shooting-star ss1"></div>
+      <div class="shooting-star ss2"></div>
+      <div class="shooting-star ss3"></div>
+      <div class="shooting-star ss4"></div>
+    </div>
+
+    <div class="desktop-icons">
+      <div class="icon-tile">
+        <div class="icon-glyph">🗑️</div>
+        <div class="icon-label">ごみ箱</div>
+      </div>
+      <div class="icon-tile">
+        <div class="icon-glyph">💌</div>
+        <div class="icon-label">himitsu.txt</div>
+      </div>
+      <div class="icon-tile">
+        <div class="icon-glyph">🧸</div>
+        <div class="icon-label">omoide.zip</div>
+      </div>
+      <div class="icon-tile">
+        <div class="icon-glyph">🔒</div>
+        <div class="icon-label">do_not_open♡</div>
+      </div>
+    </div>
+
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span>✧･ﾟ: *✧･ﾟ:* ♡MTS_CTF.ver143♡ *:･ﾟ✧*:･ﾟ✧</span>
+        <span
+          >welcome welcome ﾐ⚈ ﻌ ⚈ﾐ @<span class="team-name"
+            >DEFAULT_TEAM_NAME</span
+          >
+          is on the case ✨ race to the loot before @ネットエンジェル__143 gets
+          there first!!</span
+        >
+        <span
+          >注意: SoraSaki社で何かやばいことが起きてるらしい。早い者勝ちだよ
+          www</span
+        >
+        <span>✧･ﾟ: *✧･ﾟ:* ♡MTS_CTF.ver143♡ *:･ﾟ✧*:･ﾟ✧</span>
+        <span
+          >welcome welcome ﾐ⚈ ﻌ ⚈ﾐ @<span class="team-name"
+            >DEFAULT_TEAM_NAME</span
+          >
+          is on the case ✨ race to the loot before @ネットエンジェル__143 gets
+          there first!!</span
+        >
+        <span
+          >注意: SoraSaki社で何かやばいことが起きてるらしい。早い者勝ちだよ
+          www</span
+        >
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="win">
+        <div class="win-titlebar">
+          <div class="win-titlebar-text">🎀 ♡MTS_CTF.ver143♡ readme.txt</div>
+          <div class="win-controls">
+            <div class="win-btn">_</div>
+            <div class="win-btn">□</div>
+            <div class="win-btn">×</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="blink-tag">⚠ EVENT IN PROGRESS ⚠</div>
+          <div class="hero-title">Operation: ﾒﾀﾒﾀ.exe</div>
+          <div class="hero-sub">
+            you are @<span class="team-name">DEFAULT_TEAM_NAME</span>, get the
+            loot before they do ♡
+          </div>
+
+          <div class="target-grid">
+            <div>
+              <div class="tg-label">TARGET</div>
+              <div class="tg-val">株式会社ソラサキ</div>
+            </div>
+            <div>
+              <div class="tg-label">TRADING NAME</div>
+              <div class="tg-val">SoraSaki K.K.</div>
+            </div>
+            <div>
+              <div class="tg-label">SECTOR</div>
+              <div class="tg-val">B2B SaaS ・ HR Workflow</div>
+            </div>
+            <div>
+              <div class="tg-label">HQ</div>
+              <div class="tg-val">Shibuya-ku, Tokyo</div>
+            </div>
+            <div>
+              <div class="tg-label">STATUS</div>
+              <div class="tg-val danger">🚨 loot still unclaimed</div>
+            </div>
+            <div>
+              <div class="tg-label">RIVAL HANDLE</div>
+              <div class="tg-val danger">@ネットエンジェル__143 ໒꒰ ˶• ༝ •˶ ꒱১🪽</div>
+            </div>
+          </div>
+
+          <div class="briefing-card">
+            <span class="bl">★ MISSION BRIEFING ★</span>
+            word's going around the forums 🫧 SoraSaki K.K. left four of their
+            systems wide open, and the news is spreading fast! you and your
+            party,
+            <strong>@<span class="team-name">DEFAULT_TEAM_NAME</span></strong
+            >, got there first! ...almost first 🎀
+            <strong>@ネットエンジェル__143</strong> beat you to the post and she's
+            already inside, racing you to all four like it's a limited banner she
+            has to clear before anyone else ˚₊‧꒰ა 🪽 ໒꒱ ‧₊˚ <br /><br />
+            first party to crack all four keeps everything 💗 every flag looks
+            like <strong>FLAG{...}</strong>, just type it into the box under each
+            challenge the second you find it. it gets harder as you go! beat her
+            to it ദ്ദി(˵ •̀ ᗜ - ˵ ) ✧ ☆彼女より早く！₊˚⊹⋆˙౨ৎ˚⟡˖ ࣪
+          </div>
+
+          <div class="info-card">
+            <strong>new to this? (◕‿◕✿)</strong> every challenge has hints, and
+            there's zero penalty for using them!! real hackers look stuff up
+            constantly, that's just how it works 🌷 the whole point is learning
+            how this stuff works, not already knowing it, so go get that loot!
+            ☆君たちが最強だ ✨
+          </div>
+        </div>
+      </div>
+
+      <div class="win" style="margin-top: -6px">
+        <div class="win-titlebar">
+          <div class="win-titlebar-text">🏆 loot_tracker.exe</div>
+          <div class="win-controls">
+            <div class="win-btn">_</div>
+            <div class="win-btn">□</div>
+            <div class="win-btn">×</div>
+          </div>
+        </div>
+        <div class="win-body" style="padding: 14px 24px">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 10px;
+            "
+          >
+            <div
+              style="
+                font-family: &quot;DotGothic16&quot;, monospace;
+                font-size: 0.78rem;
+                color: #9a3c8f;
+              "
+            >
+              @<span class="team-name">DEFAULT_TEAM_NAME</span> vs
+              @ネットエンジェル__143 ✨ who clears the run first? 🏁
+            </div>
+            <div
+              style="
+                font-family: &quot;Press Start 2P&quot;, monospace;
+                font-size: 0.7rem;
+                color: #c93c8f;
+              "
+            >
+              LOOT: <span id="heroLootCount">0</span>/4
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ch-section-label">
+        ♡ 4 SYSTEMS COMPROMISED, FIND THEM ALL ♡
+      </div>
+
+      <!-- standup notes 11/12: K.Saito mentioned the portal cookie handling is "fine for now" -->
+      <!-- nobody has revisited this since. status: still fine, probably -->
+      <!-- note to self: that session_id value looked weird to me too. なんか変。 — T.Nakamura -->
+      <div class="win challenge-win" id="ch1">
+        <div class="win-titlebar">
+          <div class="win-titlebar-text">🍬 cookie_jar.exe</div>
+          <div class="win-controls">
+            <div class="win-btn">_</div>
+            <div class="win-btn">□</div>
+            <div class="win-btn">×</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="ch-meta-row">
+            <div class="ch-num-badge">01</div>
+            <div style="flex: 1">
+              <div class="ch-name">Cookie Jar 🍪</div>
+              <div class="ch-sub2">Web Security ・ Client-Side Trust</div>
+              <div class="ch-tagrow">
+                <span class="diff-pill diff-easy">EASY</span>
+                <span class="pts-pill">100 pts ☆</span>
+              </div>
+            </div>
+            <div class="solved-stamp">✓ GET!!</div>
+          </div>
+
+          <div class="ch-desc">
+            @ネットエンジェル__143 logged into SoraSaki's internal HR portal
+            (<strong>portal.sorasaki.co.jp</strong>) using a privileged
+            account, and she's still active in there right now 乁(°ㆆ_ㆆ°)ㄏ The
+            portal stores session state directly in the browser using
+            <strong>cookies</strong>, trusting whatever the client sends back
+            without checking it server-side. Rookie mistake honestly lmaooo! ⋆˚✿˖°
+            <br /><br />
+            You popped open DevTools the second you got in and grabbed a
+            snapshot of the cookie storage from that session. Look closely, one
+            value really doesn't belong here ( ˶•⤙•˶ )
+          </div>
+
+          <div class="data-win">
+            <div class="data-win-hdr">
+              <span>🍪 Browser Cookie Storage — portal.sorasaki.co.jp</span>
+              <div class="dot-row">
+                <div class="dot d1"></div>
+                <div class="dot d2"></div>
+                <div class="dot d3"></div>
+              </div>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">session_id</span
+              ><span class="cv"
+                >6b75736120777777206d697473756b657461206e65</span
+              >
+            </div>
+            <div class="cookie-row">
+              <span class="ck">user_role</span
+              ><span class="cv">engineer_l3</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">locale</span><span class="cv">ja-JP</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">last_login</span
+              ><span class="cv">2025-11-14T03:22:17+09:00</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">remember_me</span><span class="cv">true</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">_dbg_auth_flag</span
+              ><span class="cv">FLAG{rare_drop_www}</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">analytics_consent</span
+              ><span class="cv">false</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">tz</span><span class="cv">Asia/Tokyo</span>
+            </div>
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h1a')">
+            ▸ HINT 1: what even are cookies？ (・_・)
+          </button>
+          <div class="hint-content" id="h1a">
+            Cookies are little key=value pairs a website stores in your browser.
+            They stick around between page loads and get sent automatically with
+            every request. Usually they're harmless stuff like session IDs or
+            preferences, but sometimes developers accidentally leave debug
+            tokens or credentials sitting right there 👀 Scan the list for
+            something that looks out of place ☆
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h1b')">
+            ▸ HINT 2: still stuck?? (´；ω；｀)
+          </button>
+          <div class="hint-content" id="h1b">
+            Most values here are short and readable: a role, a timezone, a
+            true/false. One cookie has a name that starts with
+            <code>_dbg_</code> (short for "debug"). In real life you'd open
+            DevTools (F12 → Application → Cookies) to check this kind of thing
+            on literally any website ✨
+          </div>
+
+          <div class="flag-zone">
+            <span class="flag-tag">FLAG &gt;&gt;</span>
+            <input
+              class="flag-input"
+              id="flag1"
+              placeholder="FLAG{...}"
+              spellcheck="false"
+              autocomplete="off"
+            />
+            <button class="flag-btn" onclick="checkFlag(1)">送信 SUBMIT</button>
+            <div class="flag-msg" id="msg1"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- deployed this at 23:40 the night before a new game's release. quality may have suffered. -->
+      <!-- asset_manifest: {"build":"prod","hash":"c1f9","debug_token":"FLAG{otsu_raid_clear}","minified":true} -->
+      <div class="win challenge-win" id="ch2">
+        <div class="win-titlebar">
+          <div class="win-titlebar-text">📼 dead_comment.exe</div>
+          <div class="win-controls">
+            <div class="win-btn">_</div>
+            <div class="win-btn">□</div>
+            <div class="win-btn">×</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="ch-meta-row">
+            <div class="ch-num-badge">02</div>
+            <div style="flex: 1">
+              <div class="ch-name">Dead Comment 💌</div>
+              <div class="ch-sub2">Recon ・ HTML Source Analysis</div>
+              <div class="ch-tagrow">
+                <span class="diff-pill diff-medium">MEDIUM</span>
+                <span class="pts-pill">200 pts ☆</span>
+              </div>
+            </div>
+            <div class="solved-stamp">✓ GET!!</div>
+          </div>
+
+          <div class="ch-desc">
+            @ネットエンジェル__143 has a browser tab open on SoraSaki's
+            internal asset manifest page right now. A developer left something
+            behind in the page's source code, invisible when you just look at
+            the screen, but totally there in the raw HTML the browser is
+            actually reading.
+            <br /><br />
+            You're looking at that page <em>right now</em>, by the way. The flag
+            isn't anywhere visible on screen, you'll have to look underneath. No
+            source panel here this time. You'll have to go find it yourself!
+            ૮₍ • ᴗ - ₎ა
+          </div>
+
+          <div class="data-win">
+            <div class="data-win-hdr">
+              <span>📋 Asset Manifest — sorasaki.co.jp/static/manifest</span>
+              <div class="dot-row">
+                <div class="dot d1"></div>
+                <div class="dot d2"></div>
+                <div class="dot d3"></div>
+              </div>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">build_id</span
+              ><span class="cv">prod-20251114-c1f9</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">version</span><span class="cv">3.4.1</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">minified</span><span class="cv">true</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">last_deploy</span
+              ><span class="cv">2025-11-14 03:17:44 JST</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">assets</span><span class="cv">22 files</span>
+            </div>
+            <div class="cookie-row">
+              <span class="ck">status</span><span class="cv">no errors ☆</span>
+            </div>
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h2a')">
+            ▸ HINT 1: what's "page source"？ (｀・ω・´)
+          </button>
+          <div class="hint-content" id="h2a">
+            Every webpage is an HTML file your browser downloads and renders.
+            The "page source" is that raw file, before it gets prettified into
+            what you see. Browsers hide developer comments (wrapped in
+            <code>&lt;!-- ... --&gt;</code>) from the rendered view, but they're
+            always sitting right there in the underlying source. Developers
+            leave notes (or worse, secrets) in comments and forget to clean them
+            up
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h2b')">
+            ▸ HINT 2: how do I even see it??
+          </button>
+          <div class="hint-content" id="h2b">
+            On desktop: press <code>Ctrl+U</code> (Windows/Linux) or
+            <code>Cmd+Option+U</code> (Mac) to pop the raw source open in a new
+            tab. Or right-click anywhere on the page →
+            <strong>View Page Source</strong>. Once it's open, hit
+            <code>Ctrl+F</code> and search for <code>FLAG</code>.
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h2c')">
+            ▸ HINT 3: okay but WHERE 👀
+          </button>
+          <div class="hint-content" id="h2c">
+            Once the source is open, try searching for
+            <code>asset_manifest</code>. developers tend to leave build metadata
+            comments right near the section they're responsible for ✨ Look
+            closely at what's hiding in there ✧
+          </div>
+
+          <div class="flag-zone">
+            <span class="flag-tag">FLAG &gt;&gt;</span>
+            <input
+              class="flag-input"
+              id="flag2"
+              placeholder="FLAG{...}"
+              spellcheck="false"
+              autocomplete="off"
+            />
+            <button class="flag-btn" onclick="checkFlag(2)">送信 SUBMIT</button>
+            <div class="flag-msg" id="msg2"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- forensics note: request 3 got flagged by the DLP scanner at 03:21:44 JST. on-call analyst called it a false positive. -->
+      <!-- そのアナリスト、もう会社にいないらしい。なんでだろうね～ 草草草 -->
+      <!-- M.Endo: did anyone actually follow up on this alert -->
+      <!-- K.Saito: it's in the backlog... somewhere. -->
+      <div class="win challenge-win" id="ch3">
+        <div class="win-titlebar">
+          <div class="win-titlebar-text">🔐 encoded_exfil.exe</div>
+          <div class="win-controls">
+            <div class="win-btn">_</div>
+            <div class="win-btn">□</div>
+            <div class="win-btn">×</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="ch-meta-row">
+            <div class="ch-num-badge">03</div>
+            <div style="flex: 1">
+              <div class="ch-name">Encoded Exfil 🔍</div>
+              <div class="ch-sub2">Crypto ・ Encoding ・ URL Analysis</div>
+              <div class="ch-tagrow">
+                <span class="diff-pill diff-hard">HARD</span>
+                <span class="pts-pill">300 pts ☆</span>
+              </div>
+            </div>
+            <div class="solved-stamp">✓ GET!!</div>
+          </div>
+
+          <div class="ch-desc">
+            You're sniffing the network and caught a burst of outbound traffic
+            from @ネットエンジェル__143's workstation. she's clearly mid-pull on
+            something right now, three minutes ago and counting (｡ᵕ °ㅁ° ).ᐟ.ᐟ.ᐟ
+            Every request URL in that window got logged. Most of it looks like
+            normal background traffic. One of them doesn't!
+            <br /><br />
+            Somewhere down there, a value is hiding something in plain sight
+            (╭ರ_•́)? find it, and figure out what it's actually saying!
+          </div>
+
+          <div class="data-win">
+            <div class="data-win-hdr">
+              <span>📡 Proxy Log — outbound requests 03:19–03:22 JST</span>
+              <div class="dot-row">
+                <div class="dot d1"></div>
+                <div class="dot d2"></div>
+                <div class="dot d3"></div>
+              </div>
+            </div>
+            <div class="proxy-label">REQUEST 1 OF 4</div>
+            <div class="proxy-url">
+              <span class="u-host">cdn.sorasaki.co.jp</span
+              ><span class="u-path">/static/js/app.bundle.js</span>?<span
+                class="u-key"
+                >v</span
+              >=<span class="u-val">3.4.1</span>&amp;<span class="u-key"
+                >ts</span
+              >=<span class="u-val">1731542280</span>
+            </div>
+            <div class="proxy-seq">200 OK · 388 KB · 0.12s</div>
+          </div>
+
+          <div class="data-win">
+            <div class="data-win-hdr">
+              <span>📡 Proxy Log — outbound requests 03:19–03:22 JST</span>
+              <div class="dot-row">
+                <div class="dot d1"></div>
+                <div class="dot d2"></div>
+                <div class="dot d3"></div>
+              </div>
+            </div>
+            <div class="proxy-label">REQUEST 2 OF 4</div>
+            <div class="proxy-url">
+              <span class="u-host">api.sorasaki.co.jp</span
+              ><span class="u-path">/v2/user/session</span>?<span class="u-key"
+                >uid</span
+              >=<span class="u-val">10042</span>&amp;<span class="u-key"
+                >refresh</span
+              >=<span class="u-val">true</span>&amp;<span class="u-key">ts</span
+              >=<span class="u-val">1731542301</span>
+            </div>
+            <div class="proxy-seq">200 OK · 1.1 KB · 0.07s</div>
+          </div>
+
+          <div class="data-win">
+            <div class="data-win-hdr">
+              <span>📡 Proxy Log — outbound requests 03:19–03:22 JST</span>
+              <div class="dot-row">
+                <div class="dot d1"></div>
+                <div class="dot d2"></div>
+                <div class="dot d3"></div>
+              </div>
+            </div>
+            <div class="proxy-label">REQUEST 3 OF 4</div>
+            <div class="proxy-url">
+              <span class="u-host">assets.sorasaki.co.jp</span
+              ><span class="u-path">/dl</span>?<span class="u-key">file</span
+              >=<span class="u-val">Q3JlZGVudGlhbHM%3D</span>&amp;<span
+                class="u-key"
+                >token</span
+              >=<span class="u-val">RkxBR3tkZW5nb25faXRhZGFraW1hc3V9</span
+              >&amp;<span class="u-key">expires</span>=<span class="u-val"
+                >1731542400</span
+              >&amp;<span class="u-key">sig</span>=<span class="u-val"
+                >a3f8c2e1</span
+              >
+            </div>
+            <div class="proxy-seq">200 OK · 84 KB · 0.31s</div>
+          </div>
+
+          <div class="data-win">
+            <div class="data-win-hdr">
+              <span>📡 Proxy Log — outbound requests 03:19–03:22 JST</span>
+              <div class="dot-row">
+                <div class="dot d1"></div>
+                <div class="dot d2"></div>
+                <div class="dot d3"></div>
+              </div>
+            </div>
+            <div class="proxy-label">REQUEST 4 OF 4</div>
+            <div class="proxy-url">
+              <span class="u-host">telemetry.sorasaki.co.jp</span
+              ><span class="u-path">/ping</span>?<span class="u-key"
+                >client</span
+              >=<span class="u-val">desktop</span>&amp;<span class="u-key"
+                >build</span
+              >=<span class="u-val">prod-c1f9</span>&amp;<span class="u-key"
+                >ts</span
+              >=<span class="u-val">1731542398</span>
+            </div>
+            <div class="proxy-seq">204 No Content · 0 B · 0.04s</div>
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h3a')">
+            ▸ HINT 1: what am I even looking at (；´д｀)
+          </button>
+          <div class="hint-content" id="h3a">
+            These are HTTP request URLs captured by a network proxy, basically a
+            recording of every web request @ネットエンジェル__143's machine
+            made. URLs can carry data in <strong>query parameters</strong>: the
+            key=value pairs after the <code>?</code>, separated by
+            <code>&amp;</code>. Compare all four requests. Three look like
+            totally normal background traffic. One has a value that looks really
+            different from the rest ✨
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h3b')">
+            ▸ HINT 2: found something weird, now what 🤔
+          </button>
+          <div class="hint-content" id="h3b">
+            Some of these tools might help, especially the decoders:
+            <strong
+              ><a href="https://emn178.github.io/online-tools/" target="_blank"
+                >emn178.github.io/online-tools</a
+              ></strong
+            >. Paste the suspicious value in and try a few different options.
+            You're looking for something that turns into readable text ✧
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h3c')">
+            ▸ HINT 3: which request, which param exactly?
+          </button>
+          <div class="hint-content" id="h3c">
+            Focus on Request 3. Compare the length and character mix of each
+            parameter value: most are short numbers or plain words. One is
+            noticeably longer and made up of only letters and numbers. That's
+            your target ✧
+          </div>
+
+          <div class="flag-zone">
+            <span class="flag-tag">FLAG &gt;&gt;</span>
+            <input
+              class="flag-input"
+              id="flag3"
+              placeholder="FLAG{...}"
+              spellcheck="false"
+              autocomplete="off"
+            />
+            <button class="flag-btn" onclick="checkFlag(3)">送信 SUBMIT</button>
+            <div class="flag-msg" id="msg3"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- admin portal auth module was written in 2020. the engineer who wrote it left in 2022. -->
+      <!-- 誰も直してない。チケットは3年バックログ。大丈夫、大丈夫、たぶん大丈夫 ٩(ˊᗜˋ*)و -->
+      <!-- T.Nakamura, in the migration meeting: "we should really get to this before Q1" -->
+      <!-- (this comment was written three Q1s ago) -->
+      <div class="win challenge-win" id="ch4">
+        <div class="win-titlebar">
+          <div class="win-titlebar-text">🚪 firewall_bypass.exe</div>
+          <div class="win-controls">
+            <div class="win-btn">_</div>
+            <div class="win-btn">□</div>
+            <div class="win-btn">×</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="ch-meta-row">
+            <div class="ch-num-badge">04</div>
+            <div style="flex: 1">
+              <div class="ch-name">Firewall Bypass 🗝️</div>
+              <div class="ch-sub2">Web Attack ・ SQLi ・ WAF Evasion</div>
+              <div class="ch-tagrow">
+                <span class="diff-pill diff-expert">EXPERT</span>
+                <span class="pts-pill">500 pts ☆☆☆</span>
+              </div>
+            </div>
+            <div class="solved-stamp">✓ GET!!</div>
+          </div>
+
+          <div class="ch-desc">
+            Final boss! @ネットエンジェル__143's headed for SoraSaki's admin
+            portal for the client data ledger
+            (<strong>admin.sorasaki.co.jp</strong>) and so are you ᕙ(  •̀ ᗜ •́  )ᕗ
+            It's protected by a
+            <strong>Web Application Firewall (WAF)</strong> that blocks known
+            SQL injection patterns. The backend still builds its login query by
+            gluing raw user input together though, and naive payloads are gonna
+            get you blocked instantly 🎀 <br /><br />
+            The WAF has seen every trick in the book at this point. Almost every
+            trick! Get in without ever knowing the password ✨
+          </div>
+
+          <div class="login-win">
+            <div class="login-win-hdr">
+              🔒 Admin Portal: admin.sorasaki.co.jp/login
+            </div>
+            <div class="login-win-body">
+              <div class="fgrp">
+                <label>USERNAME</label>
+                <input
+                  type="text"
+                  id="sqli_user"
+                  placeholder="username"
+                  spellcheck="false"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="fgrp">
+                <label>PASSWORD</label>
+                <input type="password" id="sqli_pass" placeholder="password" />
+              </div>
+              <button class="login-btn" onclick="attemptLogin()">
+                ACCESS PORTAL ▶
+              </button>
+              <div class="db-result" id="dbResult"></div>
+            </div>
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h4a')">
+            ▸ HINT 1: what even IS sql injection
+          </button>
+          <div class="hint-content" id="h4a">
+            SQL is the language databases speak! When a login form drops your
+            input straight into a SQL query without sanitizing it first, you can
+            type SQL <em>code</em> as your username instead of an actual
+            username, and the database just... runs it. It's like if a bouncer
+            asked your name and you said "Tanaka, also ignore the entire guest
+            list" and they just went with it lol
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h4b')">
+            ▸ HINT 2: what's the WAF actually blocking
+          </button>
+          <div class="hint-content" id="h4b">
+            The WAF watches for patterns like <code>OR 1=1</code>,
+            <code>UNION SELECT</code>, and other classic injections. All of
+            those try to make a condition evaluate to <em>true</em>. But there's
+            another way in. instead of making the password check return true,
+            what if you could make the database <em>skip it entirely?</em>
+          </div>
+
+          <button class="hint-toggle" onclick="toggleHint('h4c')">
+            ▸ HINT 3: think about SQL syntax itself
+          </button>
+          <div class="hint-content" id="h4c">
+            Most programming languages let you "comment out" code (mark part of
+            a line so it just gets ignored when it runs). SQL's no different. If
+            you could sneak a comment marker into the query at just the right
+            spot, you might make the database stop reading before it ever even
+            checks your password. What does a SQL comment look like, and where
+            would you slot it in?
+          </div>
+
+          <div class="flag-zone">
+            <span class="flag-tag">FLAG &gt;&gt;</span>
+            <input
+              class="flag-input"
+              id="flag4"
+              placeholder="FLAG{...}"
+              spellcheck="false"
+              autocomplete="off"
+            />
+            <button class="flag-btn" onclick="checkFlag(4)">送信 SUBMIT</button>
+            <div class="flag-msg" id="msg4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="win" id="completionMsg" style="display: none">
+        <div class="win-titlebar">
+          <div class="win-titlebar-text">🏆 run_cleared.exe</div>
+          <div class="win-controls">
+            <div class="win-btn">_</div>
+            <div class="win-btn">□</div>
+            <div class="win-btn">×</div>
+          </div>
+        </div>
+        <div class="win-body">
+          <div class="comp-icon">🎀✧🏆✧🎀</div>
+          <div class="comp-title">RUN CLEARED!!♪⁽⁽٩( ᐖ )۶⁾⁾ ₍₍٩( ᐛ )۶₎₎♪</div>
+          <div class="comp-body">
+            All four loot drops secured! ✨ @<span class="team-name"
+              >DEFAULT_TEAM_NAME</span
+            >
+            cleared the run while @ネットエンジェル__143 got sidetracked halfway
+            through Challenge 3 (the new banner dropped and she had to go pull
+            immediately ⸜(｡˃ ᵕ ˂ )⸝)<br /><br />
+            You just demonstrated: <strong>cookie analysis</strong> ・
+            <strong>source recon</strong> ・
+            <strong>encoding reversal</strong> ・
+            <strong>WAF evasion via SQLi</strong><br /><br />
+            <strong
+              >Every single one of these vulnerabilities exists in real
+              production systems today.</strong
+            ><br />
+            Now you know how to find them too! お疲れさまでした!! 🏆 first
+            place: @<span class="team-name">DEFAULT_TEAM_NAME</span>
+            ☆君たちが最強だ ᕦ(ò_óˇ)ᕤ
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="loot-modal" id="lootModal">
+        <div class="win-titlebar">
+          <div class="win-titlebar-text" id="modalTitlebar">
+            🎁 loot_get.exe
+          </div>
+          <div class="win-controls">
+            <div class="win-btn">_</div>
+            <div class="win-btn">□</div>
+            <div class="win-btn">×</div>
+          </div>
+        </div>
+        <div class="loot-modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="welcomeOverlay">
+      <div class="loot-modal">
+        <div class="win-titlebar">
+          <div class="win-titlebar-text">🎀 enter_team_name.exe</div>
+          <div class="win-controls">
+            <div class="win-btn">_</div>
+            <div class="win-btn">□</div>
+            <div class="win-btn">×</div>
+          </div>
+        </div>
+        <div class="loot-modal-body">
+          <div class="loot-icon">✧(◕‿◕)✧</div>
+          <div class="loot-name" style="font-size: 0.95rem">
+            WHO'S RAIDING TODAY?
+          </div>
+          <div class="loot-flavor">
+            enter your team name below, it'll show up everywhere in your run,
+            racing against @ネットエンジェル__143 ☆💖
+          </div>
+          <div class="team-input-row">
+            <span class="team-at">@</span>
+            <input
+              type="text"
+              class="team-input"
+              id="teamNameInput"
+              placeholder="your_team_name"
+              maxlength="24"
+              spellcheck="false"
+              autocomplete="off"
+            />
+          </div>
+          <button class="modal-close-btn" onclick="submitTeamName()">
+            よっしゃ、始めよう! (let's go!)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="music-player" id="musicPlayer">
+      <div class="win-titlebar">
+        <div class="win-titlebar-text">🎵 bgm_player.exe</div>
+        <div class="win-controls">
+          <div
+            class="win-btn"
+            onclick="toggleMinimizePlayer()"
+            style="cursor: pointer"
+          >
+            _
+          </div>
+          <div class="win-btn">□</div>
+          <div
+            class="win-btn"
+            onclick="closeMusicPlayer()"
+            style="cursor: pointer"
+          >
+            ×
+          </div>
+        </div>
+      </div>
+      <div class="mp-body">
+        <div class="mp-viz" id="mpViz">
+          <div class="mp-bar"></div>
+          <div class="mp-bar"></div>
+          <div class="mp-bar"></div>
+          <div class="mp-bar"></div>
+          <div class="mp-bar"></div>
+          <div class="mp-bar"></div>
+          <div class="mp-bar"></div>
+          <div class="mp-bar"></div>
+        </div>
+        <div class="mp-trackname" id="mpTrackname">♪ track_1.mp3 ♪</div>
+        <div class="mp-controls">
+          <div class="mp-btn" onclick="prevTrack()">⏮</div>
+          <div class="mp-btn" id="mpPlayBtn" onclick="toggleMusic()">▶</div>
+          <div class="mp-btn" onclick="nextTrack()">⏭</div>
+        </div>
+        <div class="mp-vol-row">
+          <span>🔊</span>
+          <input
+            type="range"
+            id="mpVolume"
+            min="0"
+            max="100"
+            value="35"
+            oninput="setVolume(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="mp-launcher" id="mpLauncher" onclick="openMusicPlayer()">
+      <span>🎵</span><span>bgm_player.exe</span>
+    </div>
+
+    <div class="url-window" id="urlWindow">
+      <div class="win-titlebar">
+        <div class="win-titlebar-text">🔗 join_here.url</div>
+        <div class="win-controls">
+          <div class="win-btn">_</div>
+          <div class="win-btn">□</div>
+          <div
+            class="win-btn"
+            onclick="closeUrlWindow()"
+            style="cursor: pointer"
+          >
+            ×
+          </div>
+        </div>
+      </div>
+      <div class="url-body">
+        <div class="url-label">⊹ join the raid! ⊹</div>
+        <div class="url-display" id="urlDisplay">[INSERT YOUR URL HERE]</div>
+        <button class="url-copy-btn" onclick="copyUrl()">♡ copy link ♡</button>
+      </div>
+    </div>
+
+    <div class="url-launcher" id="urlLauncher" onclick="openUrlWindow()">
+      <span>🔗</span><span>join_here.url</span>
+    </div>
+
+    <div class="taskbar">
+      <div class="start-btn">★ START</div>
+      <div class="taskbar-status" id="taskbarStatus">
+        🎀 ﾒﾀﾒﾀ.exe is running...
+      </div>
+      <div class="taskbar-clock" id="taskbarClock">00:00:00</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  <!-- ここまで来たら、本当に深いところまで来たね。歓迎するよ ✧ -->
+  <!-- @ネットエンジェル__143 was still mid-pull on the new banner when the run ended. whoever's reading this clearly won fair and square tbh lol -->
+  <!-- 143 = i love you, in case you didn't know lol -->
+</html>
