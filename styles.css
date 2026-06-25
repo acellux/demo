@@ -1235,13 +1235,12 @@ body {
   display: none;
 }
 
-/* persistent URL window — bottom-left, for latecomers to grab the link */
 .url-window {
   position: fixed;
   bottom: 50px;
   left: 18px;
   z-index: 700;
-  width: 230px;
+  width: 280px;
   background: var(--win-bg);
   border: 3px solid #fff;
   box-shadow:
