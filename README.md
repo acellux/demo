@@ -43,5 +43,5 @@ filenames are case-sensitive once it's hosted, so match them exactly or it'll su
 
 anyway. you did good. go find these for real someday ☆彼女より早く、なんてね
 
-143 = i love you, in case you didn't know 🪽
+143 🪽
 
